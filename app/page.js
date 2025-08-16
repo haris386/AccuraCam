@@ -32,7 +32,7 @@ export default function HomePage() {
             {/* Logo */}
             <div className="flex items-center">
               <img
-                src="/Logos/AccuraCam/AccuraCam.png"
+                src="/Logos/Accuracam/AccuraCam.png"
                 alt="AccuraCam Logo"
                 className="object-contain"
                 style={{ height: "75px" }}
