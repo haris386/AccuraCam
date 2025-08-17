@@ -40,7 +40,7 @@ export default function AIDriven() {
   };
   return (
     <>
-      <div style={{ width: "100%", backgroundColor: "#f4f0ed" }}>
+      <div style={{ width: "100%", backgroundColor: "#fcfcfc" }}>
         <img src="/Images/multiColor.png" alt="" />
       </div>
       <section
