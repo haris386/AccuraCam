@@ -161,7 +161,7 @@ export default function AIDriven() {
       <div style={{ width: "100%", backgroundColor: "#f4f0ed" }}>
         <img src="/Images/multiColor.png" alt="" />
       </div>
-      <section style={{ backgroundColor: "#f4f0ed", padding: "8rem 8rem 3rem 4rem" }}>
+      <section className="custom-section">
         <div style={{ width: "90%" }}>
           <h4 className="text-2xl mb-3 text-orange-500">
             <span className=" text-gray-900" style={{ fontSize: "30px" }}>

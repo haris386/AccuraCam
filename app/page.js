@@ -134,7 +134,10 @@ export default function HomePage() {
           {/* Mobile Menu */}
           {menuOpen && (
             <div className="md:hidden bg-[#191817] px-6 py-4 space-y-4">
-              <div className="flex flex-col space-y-4 text-white text-sm">
+              <div
+                className="flex flex-col space-y-4 text-white text-sm"
+                style={{ alignItems: "center" }}
+              >
                 <span>About</span>
                 <span>Solutions</span>
                 <span>Industries</span>
@@ -143,7 +146,10 @@ export default function HomePage() {
               </div>
 
               {/* Mobile Buttons */}
-              <div className="flex flex-col space-y-3 mt-4">
+              <div
+                className="flex flex-col space-y-3 mt-4"
+                style={{ width: "50%", margin: "auto" }}
+              >
                 <Button
                   className="flex items-center justify-center space-x-2 rounded-full"
                   style={{
@@ -185,58 +191,59 @@ export default function HomePage() {
         </header>
 
         {/* Hero Section */}
-      <main className="px-6 py-32 md:py-44" style={{ paddingBottom: "10px" }}>
-  <div className="relative max-w-7xl mx-auto px-6 py-20">
-    {/* Text Section */}
-    <div className="relative z-10" style={{ marginLeft: "5%" }}>
-      <h1 style={{ fontSize: "85px", fontWeight: "500" }}>
-        Smart Field <br />
-        <span>Photo Capture</span>
-      </h1>
-      <p
-        className="text-gray-700 mb-8 leading-relaxed"
-        style={{ maxWidth: "500px", fontSize: "26px" }}
-      >
-        Capture, tag, and sync inspection photos with courtroom-ready accuracy — instantly.
-      </p>
-      <Button
-        className="text-white rounded-full flex items-center"
-        style={{
-          backgroundColor: "#0061A4",
-          padding: "25px 18px",
-        }}
-      >
-        Watch How It Works
-        <img
-          src="/Icons/Vector.png"
-          alt="Arrow Icon"
-          className="w-3 h-4 ml-2"
-        />
-      </Button>
-    </div>
+        <main className="px-6 py-32 md:py-44" style={{ paddingBottom: "10px" }}>
+          <div className="relative max-w-7xl mx-auto px-6 py-20">
+            {/* Text Section */}
+            <div className="relative z-10" style={{ marginLeft: "5%" }}>
+              <h1 style={{ fontSize: "85px", fontWeight: "500" }}>
+                Smart Field <br />
+                <span>Photo Capture</span>
+              </h1>
+              <p
+                className="text-gray-700 mb-8 leading-relaxed"
+                style={{ maxWidth: "500px", fontSize: "26px" }}
+              >
+                Capture, tag, and sync inspection photos with courtroom-ready
+                accuracy — instantly.
+              </p>
+              <Button
+                className="text-white rounded-full"
+                style={{
+                  backgroundColor: "#0061A4",
+                  color:"white",
+                  padding: "25px 18px",
+                }}
+              >
+                Watch How It Works
+                <img
+                  src="/Icons/Vector.png"
+                  alt="Arrow Icon"
+                  className="w-3 h-4 ml-2"
+                />
+              </Button>
+            </div>
 
-    {/* Overlapping Image */}
-    <div
-      className="absolute top-0 right-0"
-      style={{
-        width: "50%",
-        zIndex: 20, // higher than text
-      }}
-    >
-      <img
-        src="/Images/Hero-mobiles.png"
-        alt="Hero Mobiles"
-        className="object-contain drop-shadow-2xl"
-        style={{
-          width: "80%",
-          maxWidth: "600px",
-          filter: "drop-shadow(0 10px 20px rgba(0,0,0,0.5))",
-        }}
-      />
-    </div>
-  </div>
-</main>
-
+            {/* Overlapping Image */}
+            <div
+              className="absolute top-0 right-0"
+              style={{
+                width: "50%",
+                zIndex: 20, // higher than text
+              }}
+            >
+              <img
+                src="/Images/Hero-mobiles.png"
+                alt="Hero Mobiles"
+                className="object-contain drop-shadow-2xl"
+                style={{
+                  width: "80%",
+                  maxWidth: "600px",
+                  filter: "drop-shadow(0 10px 20px rgba(0,0,0,0.5))",
+                }}
+              />
+            </div>
+          </div>
+        </main>
       </div>
 
       {/* Animation Section */}
