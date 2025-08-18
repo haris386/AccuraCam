@@ -33,7 +33,7 @@ const faqs = [
   },
 ];
 
-export default function AIDriven() {
+export default function AIDriven({ faqId }) {
   const [openFaq, setOpenFaq] = useState(null);
   const toggleFaq = (faqId) => {
     setOpenFaq(openFaq === faqId ? null : faqId);
@@ -268,7 +268,7 @@ export default function AIDriven() {
         </div>
 
         {/* FAQ Section */}
-        <div className="py-12 px-6" style={{width:"95%", margin:"auto"}}>
+        <div id={faqId} className="py-12 px-6" style={{width:"95%", margin:"auto"}}>
           {/* Heading */}
           <div className="mb-8">
             <h4 className="text-2xl mb-3 text-orange-500">
