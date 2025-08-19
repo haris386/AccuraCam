@@ -29,7 +29,7 @@ export default function HomePage() {
         <header className="fixed top-0 left-0 w-full z-50">
           <nav
             className="flex items-center justify-between px-4 md:px-8 py-3"
-            style={{ backgroundColor: "#191817", padding: "0" }}
+            style={{ backgroundColor: "#191817", padding: "0 20px" }}
           >
             {/* Logo */}
             <div className="flex items-center">
