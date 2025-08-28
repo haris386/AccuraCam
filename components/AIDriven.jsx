@@ -1,35 +1,30 @@
 "use client";
 import { useState } from "react";
+
 const faqs = [
   {
     id: 1,
-    question: "Is Accurascore Suitable For Small Companies Too?",
+    question: "Is AccuraCam Suitable For Small Companies Too?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+      "AccuraCam is meant for individual users. For company coordination, you are recommended to use AccuraCore or ClaimCore, both of which have AccuraCam built in.",
   },
   {
     id: 2,
-    question: "Can I Assign Different Roles To My Team Members?",
+    question: "Can I use AccuraCam offline?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+      "Yes, AccuraCam can be used offline, but some functionalities such as voice recognition and any AI features may be disabled.",
   },
   {
     id: 3,
-    question: "Does Accurascore Automatically Calculate Financials?",
+    question: "Does AccuraCam have AI in it?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+      "At the time of writing (August 27th, 2025), AccuraCam’s AI Assisted Damage Recognition is currently in Alpha, and will roll out to Beta Testers soon.",
   },
   {
     id: 4,
-    question: "Is Accurascore Cloud-Based?",
+    question: "Does AccuraCam store my images on the cloud?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-  },
-  {
-    id: 5,
-    question: "Can I Export My Data From The System?",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+      "Yes, AccuraCam stores all images on the cloud when connected to the internet. This is to save space on your device, and allow for accessing from different devices. This functionality can be disabled in your settings.",
   },
 ];
 
@@ -75,9 +70,18 @@ export default function AIDriven({ faqId }) {
             {/* Claim Images & Attachments Card */}
             <div className="p-8 lg:p-10">
               <h4 className="text-2xl mb-3 text-orange-500">
-                <span className=" text-gray-900" style={{ fontSize: "30px" }}>
+                <span
+                  className="text-gray-900 flex items-center gap-2"
+                  style={{ fontSize: "30px" }}
+                >
                   AI-Driven Label <br />
                   Suggestions
+                  <img
+                    src="/Icons/beta.jpeg"
+                    alt="Beta Icon"
+                    className="inline-block ml-2"
+                    style={{ width: "65px", height: "35px" }}
+                  />
                 </span>
               </h4>
               <p
@@ -268,7 +272,11 @@ export default function AIDriven({ faqId }) {
         </div>
 
         {/* FAQ Section */}
-        <div id={faqId} className="py-12 px-6" style={{width:"95%", margin:"auto"}}>
+        <div
+          id={faqId}
+          className="py-12 px-6"
+          style={{ width: "95%", margin: "auto" }}
+        >
           {/* Heading */}
           <div className="mb-8">
             <h4 className="text-2xl mb-3 text-orange-500">
@@ -287,6 +295,7 @@ export default function AIDriven({ faqId }) {
                 <button
                   onClick={() => toggleFaq(faq.id)}
                   className="w-full flex justify-between items-center text-left hover:text-blue-600 transition-colors duration-200"
+                  style={{ cursor: "pointer" }}
                 >
                   <span className="text-base font-medium text-gray-900 pr-4">
                     {faq.question}
@@ -316,7 +325,10 @@ export default function AIDriven({ faqId }) {
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <div className="pb-4 text-gray-600 leading-relaxed text-sm">
+                  <div
+                    className="pb-4 text-gray-600 leading-relaxed text-sm"
+                    style={{ marginTop: "15px" }}
+                  >
                     {faq.answer}
                   </div>
                 </div>

@@ -10,6 +10,7 @@ import AIDriven from "@/components/AIDriven";
 
 export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleScroll = (id) => {
     setMenuOpen(false); // close mobile menu after click
@@ -100,6 +101,7 @@ export default function HomePage() {
                   fontSize: "14px",
                   fontWeight: "500",
                 }}
+                onClick={() => setIsOpen(true)}
               >
                 <span>Book Demo</span>
                 <img src="/Icons/Vector.png" alt="Book Demo Icon" className="w-3 h-3" />
@@ -166,25 +168,202 @@ export default function HomePage() {
         </main>
       </div>
 
-      {/* Animation Section */}
-      <div className="w-full overflow-hidden" style={{ backgroundColor: "#fff", padding: "30px 0", position: "relative" }}>
-        <div className="flex whitespace-nowrap" style={{ animation: "scrollText 15s linear infinite" }}>
-          <span
-            style={{ fontSize: "15px", fontWeight: "500", letterSpacing: "25px", color: "#000", marginRight: "100px" }}
-          >
-            A C C U R A C A M A C C U R A C A M A C C U R A C A M
-          </span>
-        </div>
-      </div>
+{/* Animation Section */}
+<div
+  className="w-full overflow-hidden"
+  style={{ backgroundColor: "#fff", padding: "30px 0", position: "relative" }}
+>
+  <div
+    className="flex whitespace-nowrap"
+    style={{ animation: "scrollText 15s linear infinite" }}
+  >
+    {/* First copy */}
+    <span
+      style={{
+        fontSize: "15px",
+        fontWeight: "500",
+        letterSpacing: "25px",
+        color: "#000",
+        marginRight: "100px",
+      }}
+    >
+      A C C U R A C A M A C C U R A C A M A C C U R A C A M
+    </span>
 
-      <style>
-        {`
+    {/* Second copy (duplicate for seamless loop) */}
+    <span
+      style={{
+        fontSize: "15px",
+        fontWeight: "500",
+        letterSpacing: "25px",
+        color: "#000",
+        marginRight: "100px",
+      }}
+    >
+      A C C U R A C A M A C C U R A C A M A C C U R A C A M
+    </span>
+  </div>
+</div>
+
+<style>
+  {`
 @keyframes scrollText {
-  0% { transform: translateX(0%); }
+  0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 `}
-      </style>
+</style>
+
+ {/* Popup Modal (Book Demo) */}
+      {isOpen && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+          <div className="bg-white rounded-3xl p-6 lg:p-8 shadow-xl w-[90%] max-w-[600px] max-h-[90vh] overflow-y-auto relative">
+            {/* Close Button */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+            >
+              ✕
+            </button>
+
+            <h3 className="text-md lg:text-md text-center text-gray-900 mb-2">
+              Registration Form
+            </h3>
+            <p className="text-gray-500 text-sm mb-6 text-center">
+              Please fill out this form with the required information
+            </p>
+
+            <form
+              action="https://formspree.io/f/mnnbqejn"
+              method="POST"
+              className="space-y-5"
+            >
+              {/* Name */}
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Name
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black-500"
+                />
+              </div>
+
+              {/* Email */}
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black-500"
+                />
+              </div>
+
+              {/* Phone */}
+              <div>
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Phone
+                </label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black-500"
+                />
+              </div>
+
+              {/* Company */}
+              <div>
+                <label
+                  htmlFor="company"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Company
+                </label>
+                <input
+                  id="company"
+                  name="company"
+                  type="text"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black-500"
+                />
+              </div>
+
+              {/* Software of Interest */}
+              <div>
+                <p className="text-sm font-medium text-gray-700 mb-2">
+                  Software of Interest
+                </p>
+                <div className="space-y-2">
+                  <label className="flex items-center">
+                    <input
+                      type="checkbox"
+                      name="software"
+                      value="AccuraCore"
+                      className="h-4 w-4 text-black-500 border-gray-300 rounded"
+                    />
+                    <span className="ml-2 text-gray-700" style={{ fontSize: "13px" }}>
+                      AccuraCore
+                    </span>
+                  </label>
+                  <label className="flex items-center">
+                    <input
+                      type="checkbox"
+                      name="software"
+                      value="ClaimCore"
+                      className="h-4 w-4 text-black-500 border-gray-300 rounded"
+                    />
+                    <span className="ml-2 text-gray-700" style={{ fontSize: "13px" }}>
+                      ClaimCore
+                    </span>
+                  </label>
+                  <label className="flex items-center">
+                    <input
+                      type="checkbox"
+                      name="software"
+                      value="AccuraCam"
+                      className="h-4 w-4 text-black-500 border-gray-300 rounded"
+                    />
+                    <span className="ml-2 text-gray-700" style={{ fontSize: "13px" }}>
+                      AccuraCam
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              {/* Submit */}
+              <button
+                type="submit"
+                className="w-full text-white font-bold py-3 rounded-full transition-colors duration-300 shadow-md"
+                style={{
+                  backgroundColor: "black",
+                  padding: "10px 15px",
+                  cursor: "pointer",
+                  fontSize: "15px",
+                }}
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+
 
       {/* Sections with IDs */}
       <div id="about">
