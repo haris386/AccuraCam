@@ -83,7 +83,7 @@ export default function Footer() {
     </p>
     <p className="text-gray-300 text-sm">
       <a
-        href="mailto:admin@claimcore.com"
+        href="mailto:admin@accuracam.com"
         className="hover:underline"
       >
         admin@accuracam.com
